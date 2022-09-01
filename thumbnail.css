@@ -11,33 +11,118 @@ div#largeview {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 div#card1 {
     cursor: pointer;
     width: fit-content;
     height: fit-content;
+    transition: transform;
+    transition-duration: 0.5s;
 }
 
-div.dontshow {
+div#card1:hover {
+    transform: scale(1.1);
+}
+
+.dontshow {
     display: none;
 }
 
 button {
     width: 20vw;
     cursor: pointer;
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+button:hover {
+    transform: scale(2) translate(500px,-15px) rotate(.2turn) skew(50deg,50deg);
 }
 
 .grow {
     animation: grow 10s 0s 1 both;
 }
 
+.backImg {
+    width: 50vw;
+    height: 50vw;
+    background-image: url(img/monkeySelfie.jpg);
+    background-size: cover;
+    background-clip: content-box;
+    transition: all 1s;
+    /* transition: background-clip 5s; */
+    /* padding: auto 10%; */
+}
+
+.backImg:hover {
+    padding: 10%;
+    margin: -10%;
+    /* transform: scale(1.1); */
+    /* background-clip: border-box; */
+}
+
+#staticView, #giphyView {
+    position: absolute;
+    left: 0;
+    top: 50vh;
+    transform: translate(5px,-15px) rotate(.2turn) skew(23deg,10deg);
+}
+
+#staticView, iframe.monkey {
+    width: 200px;
+    height: 200px;
+}
+
+#staticView {
+    border: 1px solid blue;
+}
+
+#giphyView {
+    border: 1px dotted brown;
+}
+
+.length {
+    height: 100vh;
+}
+
+#reeddiv, #ucdiv {
+    position: relative;
+}
+
+#reeddiv {
+    background-color: green;
+    width: min-content;
+}
+
+#ucdiv {
+    background-color: blue;
+    width: min-content;
+}
+
+iframe.notMonkey {
+    visibility: hidden;
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 10px 10px 5px 0 rgba(00, 80, 80, .5);
+}
+
 @keyframes grow {
-    from {
+    0% {
+        width: "";
         opacity: 1;
     }
 
-    to {
+    50% {
+        width: 40vw;
+    }
+
+    100% {
+        width: "";
         opacity: 0;
     }
 }
