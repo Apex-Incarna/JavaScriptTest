@@ -1,0 +1,43 @@
+body {
+    background-color: blanchedalmond;
+    height: 300vh;
+}
+
+div#largeview {
+    position: fixed;
+    /* top: 10px;
+    left: 10px; */
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div#card1 {
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+}
+
+div.dontshow {
+    display: none;
+}
+
+button {
+    width: 20vw;
+    cursor: pointer;
+}
+
+.grow {
+    animation: grow 10s 0s 1 both;
+}
+
+@keyframes grow {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,54 @@
+body {
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    height: 200vh;
+}
+
+div#navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: grey;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+div.nav {
+    width: 30%;
+    text-align: center;
+}
+
+/* By default, hide any dropdown menu item */
+div.nav div.dropdownitem a, .furtherdropdown {
+    display: none;
+    text-decoration: none;
+    color: green;
+    font-family: monospace;
+    border-width: 3px;
+    border-style: inset;
+    position: relative;
+}
+
+/* When the user hovers over the nav element, show the dropdown items */
+div.nav:hover div.dropdownitem a{
+    display: block;
+}
+
+div.nav div.dropdownitem:hover .furtherdropdown {
+    display: block;
+    /* float: right; */
+    color: black;
+    background-color: green;    
+    position: absolute;
+    left: 100px;
+    width: fit-content;
+}
+
+
+video, iframe {
+    width: 100%;
+    z-index: -1;
+    font-family: monospace;
+}
