@@ -1,6 +1,7 @@
 body {
     background-color: blanchedalmond;
     height: 300vh;
+    margin: 0;
 }
 
 div#largeview {
@@ -125,4 +126,11 @@ iframe.notMonkey {
         width: "";
         opacity: 0;
     }
+}
+
+#testPlotly {
+    border: solid blue 1px;
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
 }

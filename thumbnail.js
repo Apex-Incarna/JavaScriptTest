@@ -83,3 +83,39 @@ function collegeOut(event) {
     divframe = event.currentTarget.affect;
     divframe.style.visibility = "hidden";
 }
+
+
+// Plotly functionality
+// Get the element that will contain the plot
+testPlotly = document.getElementById("testPlotly");
+
+// Tell plotly to put a grapoh in that element
+
+Plotly.newPlot(testPlotly,
+    [{x: [0, 10, 20, 30, 40],
+    y: [9.34, 12.3, 5.3, 2, 17.23]}]);
+
+
+// Three.js
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(600, 600);
+
+document.body.appendChild(render.domElement);
+
+// That set up the box we're giong to use for the display, now time for the content
+
+var geometry = new THREE.BoxGeometry;
+var material = new THREE.MeshBasicMaterial({color:0x00ff00});
+var cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+
+camera.position.z = 5;
+
+function animate() {
+    requestAnimationFrame(animate);
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.02;
+}
